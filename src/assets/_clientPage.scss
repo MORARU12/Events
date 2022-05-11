@@ -1,0 +1,175 @@
+.client-stats {
+  width: 100%;
+  height: fit-content;
+}
+
+.client-stats_section {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f1f1f1fe;
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  border: 1px #f1f1f1fe solid;
+}
+
+.client-stats_section:nth-child(odd) {
+  background-color: white;
+}
+
+.client-stats_p {
+  display: flex;
+  flex-direction: column;
+}
+
+.client-stats_p span {
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.client-stats_section_client-page {
+  flex-wrap: wrap;
+}
+
+.client-stats_p_client-page {
+  padding: 40px;
+}
+
+//New
+
+.client-header {
+  @include flex-row;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  align-items: center;
+
+  h1 {
+    margin: 0;
+  }
+
+  section {
+    width: fit-content;
+    @include flex-row;
+
+    align-items: center;
+
+    p {
+      margin-right: 15px;
+      color: rgb(170, 170, 170);
+      font-weight: 600;
+    }
+  }
+}
+
+//_switcher
+
+.switch {
+  width: 60px;
+  height: 34px;
+  overflow: hidden;
+  cursor: pointer;
+
+  input {
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+
+  .slider {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: 0.4s ease-in-out;
+
+    background-color: black;
+    border-radius: 100px;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 10px;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    background-color: white;
+    transition: 0.2s ease-in-out;
+    border-radius: 10px;
+  }
+
+  input:checked + .slider {
+    background-color: rgb(109, 215, 109);
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(20px);
+  }
+}
+
+//client form
+
+.client-form {
+  width: 100%;
+  height: fit-content;
+
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  border: 1px #f1f1f1fe solid;
+}
+
+form {
+  width: 100%;
+  height: fit-content;
+  @include flex-column;
+
+  .form-group {
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 30px;
+    @include flex-row;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      flex: 1;
+      text-align: left;
+      font-size: 16px;
+      font-weight: 600;
+      color: rgb(170, 170, 170);
+    }
+
+    section {
+      width: 80%;
+      height: fit-content;
+
+      input {
+        margin: 0;
+      }
+
+      p {
+        color: black;
+        font-weight: 500;
+      }
+
+      button {
+        display: flex;
+        background-color: black;
+        color: white;
+        padding: 15px 20px;
+        border-radius: 15px;
+        font-weight: 600;
+        letter-spacing: 2.5px;
+
+        font-size: 14px;
+        margin-top: 25px;
+      }
+    }
+  }
+}
